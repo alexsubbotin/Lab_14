@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Subb_Lab_14
+namespace Subb_Lab_13
 {
     // Monarchy class (inherits State class)
     class Monarchy : State
@@ -44,6 +44,15 @@ namespace Subb_Lab_14
                 "Monarchical state's age: {3}\n Continent: {4}\n " +
                 "Current rulling clan: {5}\n", 
                 Name, LeaderName, Population, Age, Continent, CurrentRullingClanName);
+        }
+
+        // Property that returns an object of the base class.
+        public State BaseState
+        {
+            get
+            {
+                return new State(this.Name, this.LeaderName, this.Population, this.Age, this.Continent);
+            }
         }
     }
 }
