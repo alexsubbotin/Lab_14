@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Subb_Lab12
+namespace Subb_Lab_14
 {
     // Class of the Hash-table elements.
     class DicPoint<K, T>
