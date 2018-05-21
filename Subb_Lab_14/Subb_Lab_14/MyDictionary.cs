@@ -184,7 +184,7 @@ namespace Subb_Lab_14
         }
 
         // Adds an element to the dictionary.
-        public bool Add(object key, object value)
+        public virtual bool Add(object key, object value)
         {
             // Creating an object with wanted key and value.
             DicPoint<K, T> dicPointBuffer = new DicPoint<K, T>((K)key, (T)value);
@@ -293,7 +293,7 @@ namespace Subb_Lab_14
         }
 
         // Removing an object with the wanted value (parameter).
-        public bool Remove(object value)
+        public virtual bool Remove(object value)
         {
             // Index of the element.
             int ind = -1;
