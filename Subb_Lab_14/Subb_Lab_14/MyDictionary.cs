@@ -293,7 +293,7 @@ namespace Subb_Lab_14
         }
 
         // Removing an object with the wanted value (parameter).
-        public virtual bool Remove(object value)
+        public bool Remove(object value)
         {
             // Index of the element.
             int ind = -1;
