@@ -8,7 +8,7 @@ using System.Collections;
 namespace Subb_Lab_14
 {
     // My collection – dictionary (hash-table).
-    class MyDictionary<K, T> : IEnumerable where T : State
+    class MyDictionary<K, T> : IEnumerable 
     {
         // Array of the DicPoint elements (hash-table).
         DicPoint<K, T>[] table;
