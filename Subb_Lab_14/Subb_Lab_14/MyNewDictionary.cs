@@ -45,5 +45,11 @@ namespace Subb_Lab_14
                     throw new IndexOutOfRangeException();
             }
         }
+
+        // Count changed event.
+        public event CollectionHandler CollectionCountChanged;
+
+        // Object changed its value event.
+        public event CollectionHandler CollectionReferenceChanged;
     }
 }
