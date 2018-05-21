@@ -9,7 +9,7 @@ namespace Subb_Lab_14
     class Journal
     {
         // This list of changes.
-        public List<JournalEntry> List { get; set; }
+        public List<JournalEntry> List = new List<JournalEntry>();
 
         // Count changed event handler.
         public void CollectionCountChanged(object source, CollectionHandlerEventArgs args)

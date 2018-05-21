@@ -9,7 +9,7 @@ namespace Subb_Lab_14
     // Delegate for events.
     delegate void CollectionHandler(object source, CollectionHandlerEventArgs args);
 
-    class MyNewDictionary<K, T>: MyDictionary<K, T> 
+    class MyNewDictionary<K, T> : MyDictionary<K, T>
     {
         // Collection name.
         public string Name { get; set; }
@@ -22,13 +22,14 @@ namespace Subb_Lab_14
             else
             {
                 // Creating an event.
-                CollectionHandlerEventArgs args = new CollectionHandlerEventArgs(Name, "Object is removed", Table[j].value as State);
-                CollectionCountChanged(Name, args);
+                CollectionHandlerEventArgs args = new CollectionHandlerEventArgs(Name, "Object is removed", Table[j]);
+                if (CollectionCountChanged != null)
+                    CollectionCountChanged(Name, args);
 
 
-                base.Remove(Table[j]);
+                base.Remove(Table[j].value);
                 return true;
-            } 
+            }
         }
 
         // Add with event.
@@ -36,13 +37,14 @@ namespace Subb_Lab_14
         {
             // Creating an event.
             CollectionHandlerEventArgs args = new CollectionHandlerEventArgs(Name, "Object is added", value as State);
-            CollectionCountChanged(Name, args);
+            if (CollectionCountChanged != null)
+                CollectionCountChanged(Name, args);
 
             return base.Add(key, value);
         }
 
         // Indexer.
-        public DicPoint<K,T> this[int index]
+        public DicPoint<K, T> this[int index]
         {
             get
             {
@@ -61,7 +63,8 @@ namespace Subb_Lab_14
 
                 // Creating an event.
                 CollectionHandlerEventArgs args = new CollectionHandlerEventArgs(Name, "Object changed its value", Table[index].value as State);
-                CollectionReferenceChanged(Name, args);
+                if (CollectionReferenceChanged != null)
+                    CollectionReferenceChanged(Name, args);
             }
         }
 
@@ -77,12 +80,6 @@ namespace Subb_Lab_14
         // Constructor with parameter.
         public MyNewDictionary(int capacity) : base(capacity) { }
 
-        public MyNewDictionary(MyDictionary<K, T> myDictionary): base(myDictionary) { }
-
-        public void OnCollectionCountChanged()
-        {
-            if (CollectionCountChanged != null)
-                CollectionCountChanged();
-        }
+        public MyNewDictionary(MyDictionary<K, T> myDictionary) : base(myDictionary) { }
     }
 }

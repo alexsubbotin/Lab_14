@@ -15,10 +15,10 @@ namespace Subb_Lab_14
         public string ChangeType { get; set; }
 
         // Link to the changed object.
-        public State Obj { get; set; }
+        public object Obj { get; set; }
 
         // Constructor.
-        public CollectionHandlerEventArgs(string name, string changeType, State obj)
+        public CollectionHandlerEventArgs(string name, string changeType, object obj)
         {
             this.Name = name;
             this.ChangeType = changeType;

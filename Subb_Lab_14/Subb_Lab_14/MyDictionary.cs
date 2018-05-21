@@ -366,7 +366,7 @@ namespace Subb_Lab_14
                 bufKeys[i] = Keys[i];
 
             for (int i = index + 1; i < Keys.Length; i++)
-                bufKeys[i] = Keys[i];
+                bufKeys[i - 1] = Keys[i];
 
             Keys = bufKeys;
         }
@@ -379,8 +379,8 @@ namespace Subb_Lab_14
             for (int i = 0; i < index; i++)
                 bufValues[i] = Values[i];
 
-            for (int i = index + 1; i < Keys.Length; i++)
-                bufValues[i] = Values[i];
+            for (int i = index + 1; i < Values.Length; i++)
+                bufValues[i - 1] = Values[i];
 
             Values = bufValues;
         }

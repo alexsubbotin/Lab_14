@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Subb_Lab_14
 {
-    class State: IComparable // State class
+    class State : IComparable // State class
     {
         // State name
         protected string name;
@@ -17,7 +17,7 @@ namespace Subb_Lab_14
         // State age in years
         protected int age;
         // State's continent
-        protected string continent; 
+        protected string continent;
 
         // name property
         public string Name
@@ -93,7 +93,7 @@ namespace Subb_Lab_14
         }
 
         // Constructor without parameters
-        public State() 
+        public State()
         {
             Name = "";
             LeaderName = "";
@@ -102,7 +102,7 @@ namespace Subb_Lab_14
             Continent = "";
         }
         // Constructor with parameters
-        public State(string Name, string lName, int Pop, int Age, string Cont) 
+        public State(string Name, string lName, int Pop, int Age, string Cont)
         {
             this.Name = Name;
             this.LeaderName = lName;
@@ -112,7 +112,7 @@ namespace Subb_Lab_14
         }
 
         // Method that shows an object of the State class
-        virtual public void Show() 
+        virtual public void Show()
         {
             Console.WriteLine(" State's name: {0}\n Leader's name: {1}\n State's population: {2}\n State's age: {3}\n Continent: {4}\n",
                 Name, LeaderName, Population, Age, Continent);
@@ -120,7 +120,7 @@ namespace Subb_Lab_14
 
         public override string ToString()
         {
-            return " State's name: " + Name + " Leader's name: " + LeaderName + 
+            return " State's name: " + Name + " Leader's name: " + LeaderName +
                 " State's population: " + Population + " State's age: " + Age + " Continent: " + Continent;
         }
 
@@ -131,9 +131,13 @@ namespace Subb_Lab_14
 
             bool equal = false;
 
-            if (Name == buf.Name && LeaderName == buf.LeaderName &&
-                Population == buf.Population && Age == buf.Age && Continent == buf.Continent)
-                equal = true;
+            if (obj != null)
+            {
+                if (Name == buf.Name && LeaderName == buf.LeaderName &&
+                    Population == buf.Population && Age == buf.Age && Continent == buf.Continent)
+                    equal = true;
+            }
+            
 
             return equal;
         }
@@ -146,7 +150,7 @@ namespace Subb_Lab_14
 
             if (this.Equals(s))
                 result = 0;
-            
+
 
             return result;
         }
