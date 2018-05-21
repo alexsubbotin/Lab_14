@@ -21,9 +21,24 @@ namespace Subb_Lab_14
                 return false;
             else
             {
+                // Creating an event.
+                CollectionHandlerEventArgs args = new CollectionHandlerEventArgs(Name, "Object is removed", Table[j].value as State);
+                CollectionReferenceChanged(Name, args);
+
+
                 base.Remove(Table[j]);
                 return true;
-            }
+            } 
+        }
+
+        // Add with event.
+        public override bool Add(object key, object value)
+        {
+            // Creating an event.
+            CollectionHandlerEventArgs args = new CollectionHandlerEventArgs(Name, "Object is added", value as State);
+            CollectionReferenceChanged(Name, args);
+
+            return base.Add(key, value);
         }
 
         // Indexer.
@@ -43,6 +58,10 @@ namespace Subb_Lab_14
                     Table[index] = value;
                 else
                     throw new IndexOutOfRangeException();
+
+                // Creating an event.
+                CollectionHandlerEventArgs args = new CollectionHandlerEventArgs(Name, "Object changed its value", Table[index].value as State);
+                CollectionReferenceChanged(Name, args);
             }
         }
 
