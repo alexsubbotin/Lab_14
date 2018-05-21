@@ -22,7 +22,12 @@ namespace Subb_Lab_14
             else
             {
                 // Creating an event.
-                CollectionHandlerEventArgs args = new CollectionHandlerEventArgs(Name, "Object is removed", Table[j]);
+                State buf;
+                if (Table[j].value == null)
+                    buf = new State();
+                else
+                    buf = Table[j].value as State;
+                CollectionHandlerEventArgs args = new CollectionHandlerEventArgs(Name, "Object is removed", buf);
                 if (CollectionCountChanged != null)
                     CollectionCountChanged(Name, args);
 
