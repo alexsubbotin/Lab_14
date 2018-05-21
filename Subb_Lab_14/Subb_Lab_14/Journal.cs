@@ -9,7 +9,7 @@ namespace Subb_Lab_14
     class Journal
     {
         // This list of changes.
-        private List<JournalEntry> list;
+        public List<JournalEntry> List { get; set; }
 
         // Count changed event handler.
         public void CollectionCountChanged(object source, CollectionHandlerEventArgs args)
@@ -17,7 +17,7 @@ namespace Subb_Lab_14
             // Creating an object with change info.
             JournalEntry journalEntry = new JournalEntry(args.Name, args.ChangeType, args.Obj.ToString());
 
-            list.Add(journalEntry);
+            List.Add(journalEntry);
         }
 
         // Onject changed its value event handler.
@@ -26,14 +26,14 @@ namespace Subb_Lab_14
             // Creating an object with change info.
             JournalEntry journalEntry = new JournalEntry(args.Name, args.ChangeType, args.Obj.ToString());
 
-            list.Add(journalEntry);
+            List.Add(journalEntry);
         }
 
         public override string ToString()
         {
             string s = "";
 
-            foreach (JournalEntry j in list)
+            foreach (JournalEntry j in List)
                 s += j.Name + " " + j.ChangeType + " " + j.ObjInfo + "\n";
 
             return s;

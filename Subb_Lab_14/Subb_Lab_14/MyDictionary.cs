@@ -131,11 +131,13 @@ namespace Subb_Lab_14
                 this.Table[i] = dic.Table[i];
             }
 
+            this.Keys = new K[dic.Keys.Length];
             for (int i = 0; i < dic.Keys.Length; i++)
             {
                 this.Keys[i] = dic.Keys[i];
             }
 
+            this.Values = new T[dic.Values.Length];
             for (int i = 0; i < dic.Values.Length; i++)
             {
                 this.Values[i] = dic.Values[i];
