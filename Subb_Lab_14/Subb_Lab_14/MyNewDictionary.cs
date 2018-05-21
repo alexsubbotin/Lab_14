@@ -70,5 +70,11 @@ namespace Subb_Lab_14
 
         // Object changed its value event.
         public event CollectionHandler CollectionReferenceChanged;
+
+        // Constructor without parameters.
+        public MyNewDictionary() : base() { }
+
+        // Constructor with parameter.
+        public MyNewDictionary(int capacity) : base(capacity) { }
     }
 }
