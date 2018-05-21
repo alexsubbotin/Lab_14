@@ -13,6 +13,8 @@ namespace Subb_Lab_14
             int choice;
             do
             {
+                Console.Clear();
+
                 Console.WriteLine(@"Choose one of the options:
 1. Work with MyDictionary
 2. Demonstrate the events
@@ -34,6 +36,9 @@ namespace Subb_Lab_14
 
         public static void EventsDemo()
         {
+            Console.Clear();
+
+
             // The first collection.
 
             MyNewDictionary<int, State> dic1 = new MyNewDictionary<int, State>();
@@ -92,6 +97,9 @@ namespace Subb_Lab_14
 
             Console.WriteLine(journal1.ToString());
             Console.WriteLine(journal2.ToString());
+
+            Console.WriteLine("Press ENTER to continue");
+            Console.ReadLine();
         }
     }
 }
