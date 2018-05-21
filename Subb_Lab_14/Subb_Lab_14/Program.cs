@@ -82,13 +82,16 @@ namespace Subb_Lab_14
             dic1.Table[0] = dicPointBuf;
 
             // Adding the elem to the 2nd collection.
-            dic1.Add(rnd.Name.Length, rnd);
+            dic2.Add(rnd.Name.Length, rnd);
             // Removing an object from the 2nd collection.
-            dic1.Remove(0);
+            dic2.Remove(0);
             // Changing a value int the 2nd collection.
-            dic1.Remove(rnd);
+            dic2.Remove(rnd);
             dicPointBuf = new DicPoint<int, State>(rnd.Name.Length, rnd);
-            dic1.Table[0] = dicPointBuf;
+            dic2.Table[0] = dicPointBuf;
+
+            Console.WriteLine(journal1.ToString());
+            Console.WriteLine(journal2.ToString());
         }
     }
 }
