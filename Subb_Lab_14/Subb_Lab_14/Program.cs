@@ -84,7 +84,7 @@ namespace Subb_Lab_14
             // Changing a value int the 1st collection.
             dic1.Remove(rnd);
             DicPoint<int, State> dicPointBuf = new DicPoint<int, State>(rnd.Name.Length, rnd);
-            dic1.Table[0] = dicPointBuf;
+            dic1[0] = dicPointBuf;
 
             // Adding the elem to the 2nd collection.
             dic2.Add(rnd.Name.Length, rnd);
@@ -93,7 +93,7 @@ namespace Subb_Lab_14
             // Changing a value int the 2nd collection.
             dic2.Remove(rnd);
             dicPointBuf = new DicPoint<int, State>(rnd.Name.Length, rnd);
-            dic2.Table[0] = dicPointBuf;
+            dic2[0] = dicPointBuf;
 
             Console.WriteLine(journal1.ToString());
             Console.WriteLine(journal2.ToString());
